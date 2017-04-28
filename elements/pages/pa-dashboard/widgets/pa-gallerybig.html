@@ -1,0 +1,216 @@
+<html><head></head><body><dom-module id="pa-gallerybig">
+  <template>
+    <style include="shared-styles"></style>
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+  <style>
+body { padding-top: 20px; }
+#myCarousel .nav a small {
+    display:block;
+}
+#myCarousel .nav {
+	background:#eee;
+}
+#myCarousel .nav a {
+    border-radius:0px;
+}
+</style>
+ <style type="text/css">
+            .selected img {
+	opacity:0.5;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+        </style>
+
+
+ <div class="container">
+
+  
+  	<!-- thumb navigation carousel -->
+<!--
+    <div class="col-md-12 hidden-sm hidden-xs" id="slider-thumbs">
+        
+          <ul class="list-inline">
+          <li> <a id="carousel-selector-0" class="selected">
+            <img src="imageGallery/File1.png;text=one" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-1">
+            <img src="imageGallery/File1.png;text=two" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-2">
+            <img src="imageGallery/File1.png;text=three" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-3">
+            <img src="http://placehold.it/80x60&amp;text=four" class="img-responsive">
+          </a></li>
+                <li> <a id="carousel-selector-4">
+            <img src="http://placehold.it/80x60&amp;text=five" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-5">
+            <img src="http://placehold.it/80x60&amp;text=six" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-6">
+            <img src="http://placehold.it/80x60&amp;text=seven" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-7">
+            <img src="http://placehold.it/80x60&amp;text=eight" class="img-responsive">
+          </a></li>
+            </ul>
+        
+    </div>
+-->
+  
+  
+    <!-- main slider carousel -->
+    <div class="row">
+        <div class="col-md-12" id="slider">
+            
+                <div class="col-md-12" id="carousel-bounding-box">
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- main slider carousel items -->
+                        <div class="carousel-inner">
+                            <div class="active item" data-slide-number="0">
+                                <img src="imageGallery/File1.png" class="img-responsive">
+ <div class="desc">Add a description of the image here</div>
+                            </div>
+                            <div class="item" data-slide-number="1">
+                              <img src="imageGallery/File2.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                            <div class="item" data-slide-number="2">
+                                <img src="imageGallery/File3.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                            <div class="item" data-slide-number="3">
+                                <img src="imageGallery/File5.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                            <div class="item" data-slide-number="4">
+                                <img src="imageGallery/File7.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                            <div class="item" data-slide-number="5">
+                                <img src="imageGallery/File8.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                            <div class="item" data-slide-number="6">
+                                <img src="imageGallery/File9.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                            <div class="item" data-slide-number="7">
+                                <img src="imageGallery/File10.png" class="img-responsive">
+<div class="desc">Add a description of the image here</div>
+
+                            </div>
+                        </div>
+                        <!-- main slider carousel nav controls --> <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <!--/main slider carousel-->
+
+</div>
+
+<br>
+<br><br>
+<br>
+
+  </template>
+ <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-gallerybig',
+created: function() {
+        console.log(this.localName + '#' + this.id + ' was created');
+      },
+
+      ready: function() {
+        console.log(this.localName + '#' + this.id + ' has local DOM initialized');
+$('#myCarousel').carousel({
+		interval:   2000
+	});
+	
+	var clickEvent = true;
+	$('#myCarousel').on('click', '.nav a', function() {
+			clickEvent = true;
+			$('.nav li').removeClass('active');
+			$(this).parent().addClass('active');		
+	}).on('slid.bs.carousel', function(e) {
+		if(!clickEvent) {
+			var count = $('.nav').children().length -1;
+			var current = $('.nav li.active');
+			current.removeClass('active').next().addClass('active');
+			var id = parseInt(current.data('slide-to'));
+			if(count == id) {
+				$('.nav li').first().addClass('active');	
+			}
+		}
+		clickEvent = true;
+	});
+      },
+
+      attached: function() {
+        console.log(this.localName + '#' + this.id + ' was attached');
+      },
+
+      detached: function() {
+        console.log(this.localName + '#' + this.id + ' was detached');
+      },
+
+      attributeChanged: function(name, type) {
+        console.log(this.localName + '#' + this.id + ' attribute ' + name +
+          ' was changed to ' + this.getAttribute(name));
+      }
+
+      });
+    })();
+/*
+
+$(document).ready( function() {
+    $('#myCarousel').carousel({
+		interval:   4000
+	});
+	
+	var clickEvent = false;
+	$('#myCarousel').on('click', '.nav a', function() {
+			clickEvent = true;
+			$('.nav li').removeClass('active');
+			$(this).parent().addClass('active');		
+	}).on('slid.bs.carousel', function(e) {
+		if(!clickEvent) {
+			var count = $('.nav').children().length -1;
+			var current = $('.nav li.active');
+			current.removeClass('active').next().addClass('active');
+			var id = parseInt(current.data('slide-to'));
+			if(count == id) {
+				$('.nav li').first().addClass('active');	
+			}
+		}
+		clickEvent = false;
+	});
+});
+*/
+  </script>
+
+
+
+</dom-module></body></html>

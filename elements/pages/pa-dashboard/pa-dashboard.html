@@ -1,0 +1,82 @@
+<html><head><link rel="import" href="widgets/pa-gallerybig.html">
+<link rel="import" href="widgets/pa-gallerycarousel.html">
+<link rel="import" href="widgets/pa-gallery-big.html">
+<link rel="import" href="widgets/pa-gallery.html">
+<link rel="import" href="widgets/pa-about.html">
+
+
+</head><body><dom-module id="pa-dashboard">
+  <template>
+    <style include="shared-styles"></style>
+
+<!--
+    <pa-simple-grid sm-cols="1" md-cols$='{{cols}}'>
+	  <pa-widget widget="{{ widgets.gallery }}"></pa-widget>
+      <pa-widget widget="{{ widgets.about }}"></pa-widget>
+
+
+    </pa-simple-grid>
+-->
+<pa-simple-grid sm-cols="1" md-cols$="1">
+<pa-gallery></pa-gallery>
+<!-- <h1>info {{text.elementName}}</h1> -->
+<pa-gallerycarousel></pa-gallerycarousel>
+<!-- <pa-about></pa-about> -->
+    </pa-simple-grid>
+
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+/*
+setInterval(function() {
+                 window.location.hash = '#top';
+console.log('reloadeddddd');
+                }, 3000); 
+*/
+
+
+      Polymer({
+        is: 'pa-dashboard',
+      ready: function() {
+        console.log(this.localName + '#' + this.id + ' is ready');
+},
+      attached: function() {
+        //console.log(this.localName + '#' + this.id + ' was attached');
+
+      },
+
+      detached: function() {
+        //console.log(this.localName + '#' + this.id + ' was detached');
+      },
+
+      attributeChanged: function(name, type) {
+        //console.log(this.localName + '#' + this.id + ' attribute ' + name +
+         // ' was changed to ' + this.getAttribute(name));
+      },
+		
+
+        properties: {
+          widgets: {
+            type: Array,
+            value: {
+              gallery: {
+                title: 'Gallery',
+                component: 'pa-gallery'
+              },
+              about: {
+                title: 'About Polymer Admin',
+                component: 'pa-about'
+              }
+            }
+          }
+        }
+      });
+    })();
+
+
+  </script>
+
+</dom-module></body></html>

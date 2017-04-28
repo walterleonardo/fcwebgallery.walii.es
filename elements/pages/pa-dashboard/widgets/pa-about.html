@@ -1,0 +1,120 @@
+<html><head></head><body><dom-module id="pa-about">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+        @apply(--layout);
+        @apply(--layout-horizontal);
+      }
+
+      .team-photo img {
+        max-width: 298px;
+        max-height: 298px;
+      }
+
+      .team-info {
+        box-sizing: border-box;
+        padding-left: 24px;
+        font-size: 14px;
+      }
+
+      .team-info paper-button {
+        display: block;
+        margin: 24px 0;
+        max-width: 200px;
+        box-sizing: border-box;
+		text-align: center;
+      }
+
+      /*@media (max-width: 1120px) and (min-width: $resXS) {
+        @include layout-collapsed();
+      }*/
+
+      @media (max-width: 1420px) and (min-width: 1221px), (max-width: 870px) and (min-width: 770px), (max-width: 575px) {
+        .team-photo {
+          max-width: 200px;
+          overflow: hidden;
+        }
+        .team-photo img {
+          margin-left: -46px
+        }
+      }
+
+      @media (max-width: 1220px) and (min-width: 992px), (max-width: 770px) and (min-width: 641px) {
+        .team-photo {
+          display: none;
+        }
+        .team-info {
+          padding-left: 0;
+        }
+      }
+    </style>
+
+
+      <div>
+        <paper-material class="widgetAuto" elevation="1">
+
+    <div class="team-info flex">
+<!--
+<div class="team-photo">
+      <img src="user.png" width="60px">
+    </div>
+-->
+<img src="imageGallery/logo_rentacar.png" width="260px"><br>
+<h3>Conditions</h3>
+<ol>
+  <li>The day's schedule is from 8 AM to 8 PM. The renter must pay the equivalent of an extra day's rent in the event the vehicle is returned later than 8 PM of the day the present contract ends.</li>
+  <li>Bookings are based on vehicle types. Booking a type of vehicle does not confer the right to be assigned a specific model of the vehicle type.</li>
+  <li>The vehicle may only be used on public roads and highways. It is expressly forbidden:</li>
+<ol type="a">
+  <li>to use the vehicle to take part in races, competitions or any kind of challenge.</li>
+  <li>to use the vehicle for driving lessons.</li>
+  <li>to use the vehicle for tests.</li>
+<li>to transport people or cargo for commercial gain.</li>
+<li>to sublet the vehicle.</li>
+<li>to commit criminal offences with the vehicle, even if said offences are only considered to be of criminal nature in the place where the offence is committed.</li>
+<li>to drive the vehicle when the driver's physical condition is impaired by alcohol, drugs, tiredness or illness.</li>
+<li>to use the vehicle to propel or tow other vehicles.</li>
+<li>to use the vehicle in the event of risk, in particular if any of the dashboard warning lights illuminate.</li>
+<li>to use the vehicle to transport toxic, flammable or other hazardous substances.</li>
+
+</ol>
+<li>The rented vehicle is insured for third-party civil responsibility by means of a Certificate of Mandatory insurance and a voluntary insurance policy and Criminal Defence insurance.</li>
+<li>If the field "Seguro" ("Insurance") of the present contract has nothing marked, this means that fully comprehensive insurance without an excess is included in the final price. The exceptions from this clause can be found in the clauses 7 and 8. Clause 6 is applied only in exceptional cases and with previous announcement of the company.</li>
+<li>The customer paying a surcharge of 6 Euro per day VAT included, hires the COVERAGE of damage to the vehicle.</li>
+<li>For drivers under 25 years old or for those who have held a driving license for less than three years, even if the COVERAGE of damage to the vehicle has been contracted, this will be understood as carrying an excess of 300 Euro for group A vehicles, 500 Euro for group B and C vehicles and 1000 Euro for group D vehicles.</li>
+<li>The underneath (the bottom part) of the vehicle, keys and wheels are excluded from any kind of insurance. Repairs, that are not authorized by the company are paid by the client.</li>
+<li>Even assuming the surcharges have been paid by the renter for the COVERAGE of damage to the vehicle, such coverage will not apply in cases of accident due to the inﬂuence of alcohol or drugs.</li>
+<li>The car which is the object to of the present contract can be driven only and exclusive by the renter, the lending or sub-hire to third parties is forbidden.</li>
+<li>The renter will have no right to any Claims, if because of breakdown or accident, he arrives late on any specific timetable of schedule he may have had.</li>
+<li>DRIVING LICENSE AND AGE: A license valid in Spain is required. It should be issued for at least two years and the driver must be 21 years old.</li>
+<li>EXTENSION OF PERIOD OF HIRE: If it is required to extend the period of hire, the office which hired the car must be informed in order to be able to extend the insurance coverage.</li>
+<li>TAXES: All accounts are subject to VAT tax.</li>
+<li>The lessee of the vehicle specified in this contract declares that he has received it in perfect condition and working order, having examined it and tested the accelerator, clutch, gears, brakes etc., as well as the dipped and full headlights and sidelights.</li>
+<li>In the event of litigation both Fernando Caro S.L and its clients submit voluntary to the jurisdiction and competence of the Courts of Palma de Mallorca (Spain).</li>
+
+</ol>
+    </div>
+
+        </paper-material>
+      </div>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-about',
+
+        goToSourceCode: function() {
+          window.open('https://github.com/akveo/polymer-admin', '_blank');
+        }
+      });
+    })();
+
+  </script>
+
+</dom-module></body></html>

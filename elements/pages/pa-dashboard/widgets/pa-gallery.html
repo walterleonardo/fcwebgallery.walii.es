@@ -1,0 +1,140 @@
+<html><head></head><body><dom-module id="pa-gallery">
+  <template>
+    <style include="shared-styles"></style>
+
+  <style>
+/*
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+    box-sizing: border-box;
+}
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+html,
+body{
+	min-height: 80%;
+}
+body{
+	background-image: radial-gradient(mintcream 0%, lightgray 100%);
+}
+h1{
+	display: table;
+	margin: 5% auto 0;
+	text-transform: uppercase;
+	font-family: 'Anaheim', sans-serif;
+	font-size: 4em;
+	font-weight: 400;
+	text-shadow: 0 1px white, 0 2px black;
+}
+*/
+.container{
+	margin: 1% auto;
+	width: 110px;
+	height: 100px;
+	position: relative;
+	perspective: 2200px;
+}
+#carousel{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: rotation 30s infinite linear;
+}
+#carousel:hover{
+	animation-play-state: paused;
+}
+#carousel figure{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 50%px;
+	left: 10px;
+	top: 10px;
+	background: gray;
+	overflow: hidden;
+	border: solid 5px gray;
+}
+#carousel figure:nth-child(1) { transform: rotateY(0deg) translateZ(200px);}
+#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(200px);}
+#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(200px);}
+#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(200px);}
+#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(200px);}
+#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(200px);}
+#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(200px);}
+#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(200px);}
+#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(200px);}
+
+img{
+	-webkit-filter: grayscale(0);
+	background: white;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+img:hover{
+	-webkit-filter: grayscale(0);
+  transform: scale(1.2,1.2);
+}
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
+</style>
+  <div class="container">
+    	<div id="carousel">
+			<figure><img src="imageGallery/File1.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File2.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File3.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File10.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File5.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File11.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File7.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File8.png" alt="" height="100"></figure>
+			<figure><img src="imageGallery/File9.png" alt="" height="100"></figure>
+		</div>
+	</div>
+
+<br>
+<br>
+    <!--
+  <div>
+        <paper-material class="widgetAuto" elevation="1">
+
+<paper-carousel items="3" dotText="true">
+    <img src="imageGallery/1.jpeg" draggable="false"/>
+    <img src="imageGallery/2.jpeg" draggable="false"/>
+    <img src="imageGallery/3.jpeg" draggable="false"/>
+    <img src="imageGallery/1.jpeg" draggable="false"/>
+    <img src="imageGallery/1.jpeg" draggable="false"/>
+</paper-carousel>
+
+
+        </paper-material>
+      </div>
+-->
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-gallery'
+      });
+    })();
+  </script>
+
+</dom-module></body></html>
