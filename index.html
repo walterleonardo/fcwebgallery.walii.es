@@ -1,7 +1,9 @@
-<!DOCTYPE html><html lang="ES"><head>
+<!DOCTYPE html>
+<html lang="ES">
+<head>
   <meta charset="utf-8">
   <meta name="description" content="">
-<meta http-equiv="refresh" content="60">
+  <meta http-equiv="refresh" content="60">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FC renta Car</title>
 
@@ -46,42 +48,21 @@
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app">
 
-<!--   <pa-auth-data id="data" location='{{location}}' user="{{user}}" todos="{{todos}}" profile="{{profile}}"></pa-auth-data> -->
-
-  <paper-scroll-header-panel fixed="">
+  <paper-scroll-header-panel fixed="true">
 
     <paper-toolbar class="top-toolbar">
-      <!-- <h1>FC rent a Car</h1> -->
-<!--       <paper-icon-button icon="menu" class="toggle-drawer" on-click="toggleDrawer"></paper-icon-button> -->
-      <span class="flex"><!-- <a href="/dashboard"><img src="/images/flagUk.png" width="50px"></a><a href="/dashboard-fr"><img src="/images/flagFr.png" width="50px"></a><a href="/dashboard"><img src="/images/flagRus.png" width="50px"></a> --></span>
-      <iron-image style="width:400px; height:650px; padding-top:100px;" sizing="contain" preload="" fade=""
-                  src="images/logo_renta_car1.png"></iron-image>
-    <!--
-  <paper-icon-button icon="refresh" class="refresh-icon"></paper-icon-button>
-      <pa-search></pa-search>
-      <pa-auth-info location='{{location}}' user="{{user}}"  profile='{{profile}}' on-sign-out="signOut" on-sign-in="signIn"></pa-auth-info>
--->
+      <span class="flex"></span>
+      <iron-image style="width:400px; height:200px; margin-top:60px; padding-top:150px;" sizing="contain" preload=""
+                  fade="" src="images/logo_renta_car1.png"></iron-image>
+      <span class="flex"></span>
     </paper-toolbar>
 
-<!--     <paper-drawer-panel id="paperDrawerPanel" class="collapsed-menu"> -->
-
-<!--
-      <paper-scroll-header-panel drawer>
-
-        <pa-menu route="{{route}}" user="{{user}}"></pa-menu>
-
-      </paper-scroll-header-panel>
--->
-
-      <paper-scroll-header-panel main="">
-<br><br>
-        <pa-pages route="{{route}}" user="{{user}}" profile="{{profile}}" todos="{{todos}}" on-sign-in="signIn"></pa-pages>
-
-        <pa-footer></pa-footer>
-      </paper-scroll-header-panel>
-
-<!--     </paper-drawer-panel> -->
-
+    <paper-scroll-header-panel main="">
+      <br><br>
+      <pa-pages route="{{route}}" user="{{user}}" profile="{{profile}}" todos="{{todos}}"
+                on-sign-in="signIn"></pa-pages>
+      <pa-footer></pa-footer>
+    </paper-scroll-header-panel>
   </paper-scroll-header-panel>
 
 </template>
@@ -89,17 +70,16 @@
 <!-- build:js scripts/app.js -->
 <script src="scripts/app.js"></script>
 <script>
-window.onload = function () {
-console.log(' Ready index.html');
-var language = "en";
+  window.onload = function () {
+    console.log(' Ready index.html');
+    var language = "en";
 
-		};
-
-
+  };
 
 
-     </script>
+</script>
 <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
 <!-- endbuild-->
 
-</body></html>
+</body>
+</html>

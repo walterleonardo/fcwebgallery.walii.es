@@ -9,20 +9,11 @@
   <template>
     <style include="shared-styles"></style>
 
-<!--
-    <pa-simple-grid sm-cols="1" md-cols$='{{cols}}'>
-	  <pa-widget widget="{{ widgets.gallery }}"></pa-widget>
-      <pa-widget widget="{{ widgets.about }}"></pa-widget>
 
-
-    </pa-simple-grid>
--->
 <pa-simple-grid sm-cols="1" md-cols$="1">
 <pa-gallery></pa-gallery>
-<!-- <h1>info {{text.elementName}}</h1> -->
 <pa-gallerycarousel></pa-gallerycarousel>
-<!-- <pa-about></pa-about> -->
-    </pa-simple-grid>
+</pa-simple-grid>
 
 
   </template>
@@ -34,7 +25,7 @@
 setInterval(function() {
                  window.location.hash = '#top';
 console.log('reloadeddddd');
-                }, 3000); 
+ }, 3000);
 */
 
 
@@ -56,7 +47,7 @@ console.log('reloadeddddd');
         //console.log(this.localName + '#' + this.id + ' attribute ' + name +
          // ' was changed to ' + this.getAttribute(name));
       },
-		
+
 
         properties: {
           widgets: {

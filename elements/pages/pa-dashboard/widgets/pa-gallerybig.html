@@ -4,7 +4,10 @@
             <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
   <style>
-body { padding-top: 20px; }
+    body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
 #myCarousel .nav a small {
     display:block;
 }
@@ -28,46 +31,10 @@ div.desc {
 
  <div class="container">
 
-  
-  	<!-- thumb navigation carousel -->
-<!--
-    <div class="col-md-12 hidden-sm hidden-xs" id="slider-thumbs">
-        
-          <ul class="list-inline">
-          <li> <a id="carousel-selector-0" class="selected">
-            <img src="imageGallery/File1.png;text=one" class="img-responsive">
-          </a></li>
-          <li> <a id="carousel-selector-1">
-            <img src="imageGallery/File1.png;text=two" class="img-responsive">
-          </a></li>
-          <li> <a id="carousel-selector-2">
-            <img src="imageGallery/File1.png;text=three" class="img-responsive">
-          </a></li>
-          <li> <a id="carousel-selector-3">
-            <img src="http://placehold.it/80x60&amp;text=four" class="img-responsive">
-          </a></li>
-                <li> <a id="carousel-selector-4">
-            <img src="http://placehold.it/80x60&amp;text=five" class="img-responsive">
-          </a></li>
-          <li> <a id="carousel-selector-5">
-            <img src="http://placehold.it/80x60&amp;text=six" class="img-responsive">
-          </a></li>
-          <li> <a id="carousel-selector-6">
-            <img src="http://placehold.it/80x60&amp;text=seven" class="img-responsive">
-          </a></li>
-          <li> <a id="carousel-selector-7">
-            <img src="http://placehold.it/80x60&amp;text=eight" class="img-responsive">
-          </a></li>
-            </ul>
-        
-    </div>
--->
-  
-  
     <!-- main slider carousel -->
     <div class="row">
         <div class="col-md-12" id="slider">
-            
+
                 <div class="col-md-12" id="carousel-bounding-box">
                     <div id="myCarousel" class="carousel slide">
                         <!-- main slider carousel items -->
@@ -124,8 +91,7 @@ div.desc {
 
 </div>
 
-<br>
-<br><br>
+
 <br>
 
   </template>
@@ -148,12 +114,12 @@ created: function() {
 $('#myCarousel').carousel({
 		interval:   2000
 	});
-	
-	var clickEvent = true;
+
+        var clickEvent = true;
 	$('#myCarousel').on('click', '.nav a', function() {
 			clickEvent = true;
 			$('.nav li').removeClass('active');
-			$(this).parent().addClass('active');		
+    $(this).parent().addClass('active');
 	}).on('slid.bs.carousel', function(e) {
 		if(!clickEvent) {
 			var count = $('.nav').children().length -1;
@@ -161,7 +127,7 @@ $('#myCarousel').carousel({
 			current.removeClass('active').next().addClass('active');
 			var id = parseInt(current.data('slide-to'));
 			if(count == id) {
-				$('.nav li').first().addClass('active');	
+        $('.nav li').first().addClass('active');
 			}
 		}
 		clickEvent = true;
@@ -183,32 +149,6 @@ $('#myCarousel').carousel({
 
       });
     })();
-/*
-
-$(document).ready( function() {
-    $('#myCarousel').carousel({
-		interval:   4000
-	});
-	
-	var clickEvent = false;
-	$('#myCarousel').on('click', '.nav a', function() {
-			clickEvent = true;
-			$('.nav li').removeClass('active');
-			$(this).parent().addClass('active');		
-	}).on('slid.bs.carousel', function(e) {
-		if(!clickEvent) {
-			var count = $('.nav').children().length -1;
-			var current = $('.nav li.active');
-			current.removeClass('active').next().addClass('active');
-			var id = parseInt(current.data('slide-to'));
-			if(count == id) {
-				$('.nav li').first().addClass('active');	
-			}
-		}
-		clickEvent = false;
-	});
-});
-*/
   </script>
 
 
