@@ -7,11 +7,12 @@
 
 </head><body><dom-module id="pa-dashboard">
   <template>
-    <style include="shared-styles"></style>
-
+    <style include="shared-styles">
+    </style>
 
 <pa-simple-grid sm-cols="1" md-cols$="1">
-<pa-gallery></pa-gallery>
+
+  <pa-gallery></pa-gallery>
 <pa-gallerycarousel></pa-gallerycarousel>
 </pa-simple-grid>
 
@@ -21,12 +22,6 @@
   <script>
     (function() {
       'use strict';
-/*
-setInterval(function() {
-                 window.location.hash = '#top';
-console.log('reloadeddddd');
- }, 3000);
-*/
 
 
       Polymer({
